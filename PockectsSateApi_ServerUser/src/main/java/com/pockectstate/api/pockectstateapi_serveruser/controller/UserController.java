@@ -1,7 +1,7 @@
 package com.pockectstate.api.pockectstateapi_serveruser.controller;
 
 import com.pockectstate.api.common.vo.R;
-import com.pockectstate.api.pockectstateapi_serveruser.dto.UserDto;
+import com.pockectstate.api.common.dto.UserDto;
 import com.pockectstate.api.pockectstateapi_serveruser.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

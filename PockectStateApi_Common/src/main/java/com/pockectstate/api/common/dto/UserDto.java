@@ -1,4 +1,4 @@
-package com.pockectstate.api.pockectstateapi_serveruser.dto;
+package com.pockectstate.api.common.dto;
 
 /**
  *@Author feri

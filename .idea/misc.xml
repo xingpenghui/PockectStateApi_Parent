@@ -6,6 +6,9 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/PockectsSateApi_ServerUser/pom.xml" />
+        <option value="$PROJECT_DIR$/PockectStateApi_AppApi/pom.xml" />
+        <option value="$PROJECT_DIR$/PockectStateApi_Eureka/pom.xml" />
+        <option value="$PROJECT_DIR$/PockectStateMsg_ServerMsg/pom.xml" />
       </list>
     </option>
   </component>

@@ -1,7 +1,7 @@
 package com.pockectstate.api.pockectstateapi_serveruser.service;
 
 import com.pockectstate.api.common.vo.R;
-import com.pockectstate.api.pockectstateapi_serveruser.dto.UserDto;
+import com.pockectstate.api.common.dto.UserDto;
 
 /**
  *@Author feri

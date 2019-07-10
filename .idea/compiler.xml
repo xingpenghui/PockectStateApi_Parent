@@ -7,8 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="PockectsSateApi_ServerUser" />
+        <module name="PockectStateApi_AppApi" />
         <module name="PockectStateApi_Common" />
         <module name="PockectStateApi_Entity" />
+        <module name="PockectStateApi_Eureka" />
+        <module name="PockectStateMsg_ServerMsg" />
       </profile>
     </annotationProcessing>
   </component>
