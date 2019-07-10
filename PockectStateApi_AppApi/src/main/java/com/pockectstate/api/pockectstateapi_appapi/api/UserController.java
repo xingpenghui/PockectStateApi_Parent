@@ -17,12 +17,14 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
     @Autowired
     private UserService userService;
+    @CrossOrigin
     @ApiOperation(value = "校验手机号是否出存在",notes = "校验手机号是否出存在")
     @GetMapping("api/user/checkphone.do")
     public R checkPhone(@RequestParam("phone")String phone){
         return userService.check(phone);
     }
     @PostMapping("api/user/register.do")
+    @CrossOrigin
     @ApiOperation(value = "注册会员",notes = "注册会员")
     public R save(@RequestBody UserDto userDto){
         return userService.save(userDto);

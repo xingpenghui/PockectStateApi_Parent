@@ -23,7 +23,6 @@ public class JuHeSms_Util {
         buffer.append("&tpl_value="+URLEncoder.encode("#code#="+code,"UTF-8"));
         buffer.append("&key="+SMS_KEY);
         String json=Http_Util.getStr(buffer.toString());
-        System.out.println(json);
         if(json!=null) {
             JuheSms sms = JSON.parseObject(json, JuheSms.class);
             return sms.getError_code() == 0;
