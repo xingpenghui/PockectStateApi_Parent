@@ -17,5 +17,8 @@ public class RedisKey_Config {
     //记录 1天 20次
     public static final String VCODE_FOUR="vc_four:";
 
-    //
+    //记录登录令牌相关的Key
+    public static final String JWTTOKEN_DEVICE="jwtdevice:";//手机号_设备类型_设备Mac地址
+    public static final String JWTTOKEN_TOKEN="jwttoken:";//令牌
+
 }
