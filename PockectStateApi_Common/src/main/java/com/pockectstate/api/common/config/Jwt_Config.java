@@ -9,4 +9,8 @@ public class Jwt_Config {
     public static final String JWTKEY="pockectstate_1902";
     //令牌失效时间 单位 分钟
     public static final int JWTTOKENTIME=30;
+
+    //传递的消息头名称 记录令牌
+    public static final String HEADERTOKEN="usertoken";
+
 }

@@ -21,4 +21,11 @@ public class RedisKey_Config {
     public static final String JWTTOKEN_DEVICE="jwtdevice:";//手机号_设备类型_设备Mac地址
     public static final String JWTTOKEN_TOKEN="jwttoken:";//令牌
 
+
+    //记录登录失败次数
+    public static String LOGINERROR="loginerror:";//phone 失效期 15分钟
+    //记录冻结的账号
+    public static String LOGINFORCE="loginforce:";//phone 失效期 15分钟
+
+
 }
