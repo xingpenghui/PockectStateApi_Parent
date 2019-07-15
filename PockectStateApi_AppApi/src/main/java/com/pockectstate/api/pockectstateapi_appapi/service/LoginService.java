@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletRequest;
  *@Author feri
  *@Date Created in 2019/7/13 15:06
  */
-@FeignClient(name = "LoginService")
+@FeignClient(name = "LoginProvider")
 public interface LoginService {
     //登录
     @PostMapping("auth/login.do")
