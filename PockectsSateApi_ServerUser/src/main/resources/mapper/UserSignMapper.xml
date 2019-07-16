@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.pockectstate.api.pockectstateapi_serveruser.dao.UserSignDao">
-  <resultMap id="BaseResultMap" type="com.pockectstate.entity.user.UserSign">
+  <resultMap id="BaseResultMap" type="com.pockectstate.entity.goods.UserSign">
     <result column="id" jdbcType="BIGINT" property="id" />
     <result column="uid" jdbcType="INTEGER" property="uid" />
     <result column="days" jdbcType="INTEGER" property="days" />
@@ -32,7 +32,7 @@
   <select id="selectByUidLast" resultMap="BaseResultMap">
     select * from t_usersign where uid=#{uid} order by sdate desc limit 1;
   </select>
-  <insert id="insert" parameterType="com.pockectstate.entity.user.UserSign" useGeneratedKeys="true" keyProperty="id">
+  <insert id="insert" parameterType="com.pockectstate.entity.goods.UserSign" useGeneratedKeys="true" keyProperty="id">
     insert into t_usersign ( uid, days,sdate, saward, Sextraaward,sinfo)
     values (#{uid,jdbcType=INTEGER}, #{days,jdbcType=INTEGER},
       now(), #{saward,jdbcType=INTEGER}, #{sextraaward,jdbcType=INTEGER},

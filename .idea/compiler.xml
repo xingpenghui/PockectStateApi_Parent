@@ -12,6 +12,7 @@
         <module name="PockectStateApi_Common" />
         <module name="PockectStateApi_Entity" />
         <module name="PockectStateApi_Eureka" />
+        <module name="PockectStateApi_ServerGoods" />
         <module name="PockectStateApi_ServerLogin" />
         <module name="PockectStateMsg_ServerMsg" />
       </profile>

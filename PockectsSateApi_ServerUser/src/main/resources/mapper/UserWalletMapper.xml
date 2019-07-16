@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.pockectstate.api.pockectstateapi_serveruser.dao.UserWalletDao">
-  <resultMap id="BaseResultMap" type="com.pockectstate.entity.user.UserWallet">
+  <resultMap id="BaseResultMap" type="com.pockectstate.entity.goods.UserWallet">
     <result column="id" jdbcType="INTEGER" property="id" />
     <result column="uid" jdbcType="INTEGER" property="uid" />
     <result column="psbean" jdbcType="INTEGER" property="psbean" />
@@ -14,7 +14,7 @@
     id, uid, psbean, commmoney, balamoney, no
   </sql>
 
-  <insert id="insert" parameterType="com.pockectstate.entity.user.UserWallet">
+  <insert id="insert" parameterType="com.pockectstate.entity.goods.UserWallet">
     insert into t_userwallet (uid, psbean,
       commmoney, balamoney, no)
     values ( #{uid,jdbcType=INTEGER}, #{psbean,jdbcType=INTEGER},

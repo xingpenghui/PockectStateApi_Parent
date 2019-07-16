@@ -1,7 +1,7 @@
 package com.pockectstate.api.pockectstateapi_serveruser.dao;
 
 import com.pockectstate.api.common.dto.SignDto;
-import com.pockectstate.entity.user.UserSign;
+import com.pockectstate.entity.goods.UserSign;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.web.bind.annotation.PutMapping;
 

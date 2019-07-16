@@ -8,6 +8,8 @@ import com.pockectstate.api.server.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
+import java.lang.ref.PhantomReference;
+import java.lang.ref.ReferenceQueue;
 
 /**
  *@Author feri
@@ -26,6 +28,7 @@ public class LoginController {
     //注销
     @GetMapping("auth/loginout.do")
     public R loginout(HttpServletRequest request){
+
         return userService.loginout(request.getHeader(Jwt_Config.HEADERTOKEN));
     }
     //检查

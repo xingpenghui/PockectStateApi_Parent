@@ -1,6 +1,6 @@
 package com.pockectstate.api.pockectstateapi_serveruser.dao;
 
-import com.pockectstate.entity.user.UserWallet;
+import com.pockectstate.entity.goods.UserWallet;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

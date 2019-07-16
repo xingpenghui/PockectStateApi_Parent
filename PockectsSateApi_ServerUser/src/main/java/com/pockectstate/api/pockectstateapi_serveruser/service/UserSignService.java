@@ -1,7 +1,7 @@
 package com.pockectstate.api.pockectstateapi_serveruser.service;
 
 import com.pockectstate.api.common.vo.R;
-import com.pockectstate.entity.user.UserSign;
+import com.pockectstate.entity.goods.UserSign;
 
 /**
  *@Author feri

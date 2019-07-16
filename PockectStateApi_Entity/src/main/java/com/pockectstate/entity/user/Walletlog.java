@@ -1,4 +1,4 @@
-package com.pockectstate.entity.user;
+package com.pockectstate.entity.goods;
 
 import java.util.Date;
 

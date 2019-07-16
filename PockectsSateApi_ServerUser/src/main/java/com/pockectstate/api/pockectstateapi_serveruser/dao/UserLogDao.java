@@ -1,6 +1,6 @@
 package com.pockectstate.api.pockectstateapi_serveruser.dao;
 
-import com.pockectstate.entity.user.UserLog;
+import com.pockectstate.entity.goods.UserLog;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.ResultType;
 import org.apache.ibatis.annotations.Select;

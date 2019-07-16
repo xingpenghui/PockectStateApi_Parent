@@ -18,6 +18,7 @@
         <module>PockectStateApi_Entity</module>
         <module>PockectsSateApi_ServerUser</module>
         <module>PockectStateApi_ServerLogin</module>
+        <module>PockectStateApi_ServerGoods</module>
     </modules>
     <packaging>pom</packaging>
 

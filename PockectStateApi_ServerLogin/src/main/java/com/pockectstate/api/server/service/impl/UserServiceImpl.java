@@ -15,7 +15,7 @@ import com.pockectstate.api.common.vo.R;
 import com.pockectstate.api.server.dao.UserDao;
 import com.pockectstate.api.server.service.UserService;
 import com.pockectstate.api.server.util.DeviceKey_Util;
-import com.pockectstate.entity.user.User;
+import com.pockectstate.entity.goods.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.Objects;
