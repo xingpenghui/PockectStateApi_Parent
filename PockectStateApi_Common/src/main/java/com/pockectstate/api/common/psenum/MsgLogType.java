@@ -6,7 +6,7 @@ package com.pockectstate.api.common.psenum;
  * 标记是消息项目的操作日志的类型
  */
 public enum MsgLogType {
-    validatecode(1),getbackpass(2);
+    validatecode(1),getbackpass(2),estasklog(3);
     private int index;
     private MsgLogType(int index){
         this.index=index;

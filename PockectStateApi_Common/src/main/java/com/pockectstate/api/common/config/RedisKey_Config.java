@@ -19,6 +19,7 @@ public class RedisKey_Config {
 
     //记录登录令牌相关的Key
     public static final String JWTTOKEN_DEVICE="jwtdevice:";//手机号_设备类型_设备Mac地址
+    public static final String JWTTOKEN_TYPE="jwtdevicetype:";//手机号_设备类型
     public static final String JWTTOKEN_TOKEN="jwttoken:";//令牌
 
 
@@ -27,5 +28,13 @@ public class RedisKey_Config {
     //记录冻结的账号
     public static String LOGINFORCE="loginforce:";//phone 失效期 15分钟
 
+
+    //记录商品信息的变化
+    public static final String ESHASHADD="esgoods:add";//新增  字段为商品id,值出不出为ES商品对象的JSON字符串
+    public static final String ESHASHADDSLAVE="esgoods:add:slave";//新增
+    public static final String ESHASHUPDATE="esgoods:update";//修改
+    public static final String ESHASHUPDATESLAVE="esgoods:update:slave";//修改
+    public static final String ESHASHDEL="esgoods:del";//删除
+    public static final String ESHASHDELSLAVE="esgoods:del:slave";//删除
 
 }

@@ -6,6 +6,5 @@ import java.util.List;
 public interface GoodsRepertoryMapper {
     int insert(GoodsRepertory record);
 
-    int insertSelective(GoodsRepertory record);
 
 }

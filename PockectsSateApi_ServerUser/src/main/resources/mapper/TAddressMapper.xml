@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pockectstate.api.pockectstateapi_serveruser.dao.AddressDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="brm" type="com.pockectstate.entity.user.TAddress">
+        <id column="id" property="id" />
+        <result column="uid" property="uid" />
+        <result column="province" property="province" />
+        <result column="city" property="city" />
+        <result column="country" property="country" />
+        <result column="detail" property="detail" />
+        <result column="ctime" property="ctime" />
+        <result column="phone" property="phone" />
+        <result column="name" property="name" />
+        <result column="msort" property="msort" />
+    </resultMap>
+
+    <insert id="save" useGeneratedKeys="true" keyProperty="id">
+        insert into t_address(uid,province,city,country,detail,ctime,phone,name,msort) values(#{uid},#{province},#{city},#{country},#{detail},now(),#{phone},#{name},#{msort});
+    </insert>
+    <select id="selectByUidDefault" resultMap="brm">
+        select * from t_address where uid=#{uid} and msort=1
+    </select>
+    <select id="selectByUid" resultMap="brm">
+        select * from t_address where uid=#{uid} order by msort
+    </select>
+</mapper>

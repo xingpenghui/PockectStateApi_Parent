@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pockectstate.mapper.TOrderMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.pockectstate.entity.TOrder">
+        <id column="id" property="id" />
+        <result column="uid" property="uid" />
+        <result column="money" property="money" />
+        <result column="salemoney" property="salemoney" />
+        <result column="flag" property="flag" />
+        <result column="aid" property="aid" />
+        <result column="ctime" property="ctime" />
+    </resultMap>
+
+</mapper>

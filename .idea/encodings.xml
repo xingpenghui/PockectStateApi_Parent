@@ -8,6 +8,8 @@
     <file url="file://$PROJECT_DIR$/PockectStateApi_Eureka" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/PockectStateApi_ServerGoods" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/PockectStateApi_ServerLogin" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/PockectStateApi_ServerOrder" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/PockectStateApi_ServerSearch" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/PockectStateMsg_ServerMsg" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/PockectsSateApi_ServerUser" charset="UTF-8" />
   </component>

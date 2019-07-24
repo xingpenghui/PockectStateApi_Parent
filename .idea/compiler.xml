@@ -14,6 +14,8 @@
         <module name="PockectStateApi_Eureka" />
         <module name="PockectStateApi_ServerGoods" />
         <module name="PockectStateApi_ServerLogin" />
+        <module name="PockectStateApi_ServerOrder" />
+        <module name="PockectStateApi_ServerSearch" />
         <module name="PockectStateMsg_ServerMsg" />
       </profile>
     </annotationProcessing>

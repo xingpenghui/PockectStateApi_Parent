@@ -1,5 +1,6 @@
 package com.pockectstate.api.server.service.impl;
 
+
 import com.alibaba.fastjson.JSON;
 import com.pockectstate.api.common.config.Jwt_Config;
 import com.pockectstate.api.common.config.Key_Config;
@@ -24,15 +25,19 @@ import java.util.Set;
 /**
  *@Author feri
  *@Date Created in 2019/7/11 15:51
+ * 多设备唯一登录  相同设备只能在线1个
  */
 @Service
 public class UserServiceImpl implements UserService {
     @Autowired
     private UserDao userDao;
+
     @Autowired
     private IdGenerator idGenerator;
 
     private JedisUtil jedisUtil=JedisUtil.getInstance();
+
+
     @Override
     public R login(LoginDto loginDto) {
         //Redis什么类型存储什么数据
@@ -57,7 +62,9 @@ public class UserServiceImpl implements UserService {
                     jwtToken.setNo(idGenerator.nextId()+"");
                     String jsonToken=JSON.toJSONString(jwtToken);
                     String token=Jwt_Util.createJWT(jwtToken.getNo(),Jwt_Config.JWTTOKENTIME,jsonToken);
+
                     //存储到Redis
+                    jedisUtil.setExpire(RedisKey_Config.JWTTOKEN_TYPE+"_"+loginDto.getPhone()+"_"+loginDto.getDevice(),token,Jwt_Config.JWTTOKENTIME*60);
                     //当前的令牌 值为对应的JwtToken的JSON对象
                     jedisUtil.setExpire(RedisKey_Config.JWTTOKEN_TOKEN+token,jsonToken,Jwt_Config.JWTTOKENTIME*60);
                     //当前的设备和账号信息   值为对应的令牌
@@ -82,7 +89,6 @@ public class UserServiceImpl implements UserService {
             }
             return R.setERROR("手机号或密码不正确",null);
         }
-
     }
 
     @Override
@@ -125,20 +131,29 @@ public class UserServiceImpl implements UserService {
         //验证Token是否有效
         //基于JWT  校验令牌是否符合jwt
         if(Jwt_Util.checkJWT(token)){
+
             //校验成功  符合jwt格式
             if(jedisUtil.exists(RedisKey_Config.JWTTOKEN_TOKEN+token)){
                 //再校验手机号和设备对应的令牌和当前令牌是否一致
                 String json=Jwt_Util.parseJWT(token);
                 JWTToken jwtToken= JSON.parseObject(json,JWTToken.class);
-                String dk=DeviceKey_Util.createKey(jwtToken);
-                if(jedisUtil.exists(RedisKey_Config.JWTTOKEN_DEVICE+dk)){
-                    //取出 设备对应的令牌
-                    String t=jedisUtil.get(RedisKey_Config.JWTTOKEN_DEVICE+dk);
+                //
+                //校验同种设备下是否为当前的令牌
+                if(jedisUtil.exists(RedisKey_Config.JWTTOKEN_TYPE+"_"+jwtToken.getPhone()+"_"+jwtToken.getDevice())){
+                    String t=jedisUtil.get(RedisKey_Config.JWTTOKEN_TYPE+"_"+jwtToken.getPhone()+"_"+jwtToken.getDevice());
                     if(Objects.equals(t,token)){
-                        return R.setOK("OK",null);
-                    }else {
-                        jedisUtil.del(RedisKey_Config.JWTTOKEN_TOKEN+token);
-                        return R.setERROR("已经在其他设备上登录，被迫下线",null);
+                        //校验相同设备下的令牌是否一致
+                        String dk=DeviceKey_Util.createKey(jwtToken);
+                        if(jedisUtil.exists(RedisKey_Config.JWTTOKEN_DEVICE+dk)){
+                            //取出 设备对应的令牌
+                            String t1=jedisUtil.get(RedisKey_Config.JWTTOKEN_DEVICE+dk);
+                            if(Objects.equals(t1,token)){
+                                return R.setOK("OK",null);
+                            }else {
+                                jedisUtil.del(RedisKey_Config.JWTTOKEN_TOKEN+token);
+                                return R.setERROR("已经在其他设备上登录，被迫下线",null);
+                            }
+                        }
                     }
                 }
             }
